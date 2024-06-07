@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "functions";
+
+$spacing-2-5: toRem(2.5);
+$spacing-5: toRem(5);
+$spacing-7-5: toRem(7.5);
+$spacing-10: toRem(10);
+
+$spacing-12-5: toRem(12.5);
+$spacing-15: toRem(15);
+$spacing-17-5: toRem(17.5);
+$spacing-20: toRem(20);
+
+$spacing-22-5: toRem(22.5);
+$spacing-25: toRem(25);
+$spacing-27-5: toRem(27.5);
+$spacing-30: toRem(30);
+
+$spacing-32-5: toRem(32.5);
+$spacing-35: toRem(35);
+$spacing-37-5: toRem(37.5);
+$spacing-40: toRem(40);
+
+$spacing-42-5: toRem(42.5);
+$spacing-45: toRem(45);
+$spacing-47-5: toRem(47.5);
+$spacing-50: toRem(50);
+
+$spacing-52-5: toRem(52.5);
+$spacing-55: toRem(55);
+$spacing-57-5: toRem(57.5);
+$spacing-60: toRem(60);
+
+$spacing-62-5: toRem(62.5);
+$spacing-65: toRem(65);
+$spacing-67-5: toRem(67.5);
+$spacing-70: toRem(70);

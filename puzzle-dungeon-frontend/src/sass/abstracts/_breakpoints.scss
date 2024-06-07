@@ -1,0 +1,11 @@
+@use "sass:map";
+$breakpoints: (
+  tiny: 25em,
+  small: 32.5em,
+  medium: 45em,
+  large: 65em,
+);
+$tiny-breakpoint: map.get($breakpoints, "tiny");
+$small-breakpoint: map.get($breakpoints, "small");
+$medium-breakpoint: map.get($breakpoints, "medium");
+$large-breakpoint: map.get($breakpoints, "large");

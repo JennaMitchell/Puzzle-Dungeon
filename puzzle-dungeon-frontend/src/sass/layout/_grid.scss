@@ -1,0 +1,17 @@
+.grid-two-column-parent-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  align-content: center;
+  justify-items: center;
+}
+.js-left {
+  align-self: left;
+}
+.js-right {
+  justify-self: right;
+}
+
+.js-center {
+  justify-self: center;
+}

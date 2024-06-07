@@ -1,0 +1,8 @@
+.full-window-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: max(100vw, 100vw);
+  height: max(100vh, 100vh);
+  position: relative;
+}

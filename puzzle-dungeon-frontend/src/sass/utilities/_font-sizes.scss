@@ -1,0 +1,52 @@
+@use "../abstracts" as *;
+
+@each $size-name, $size-value in $font-sizes {
+  .fs-#{$size-name} {
+    font-size: toRem($size-value);
+  }
+  .lh-#{$size-name} {
+    line-height: toRem($size-value);
+  }
+}
+
+@media (max-width: $large-breakpoint) {
+  @each $size-name, $size-value in $font-sizes-at-large-breakpoint {
+    .fs-#{$size-name} {
+      font-size: toRem($size-value);
+    }
+    .lh-#{$size-name} {
+      line-height: toRem($size-value);
+    }
+  }
+}
+@media (max-width: $medium-breakpoint) {
+  @each $size-name, $size-value in $font-sizes-at-medium-breakpoint {
+    .fs-#{$size-name} {
+      font-size: toRem($size-value);
+    }
+    .lh-#{$size-name} {
+      line-height: toRem($size-value);
+    }
+  }
+}
+
+@media (max-width: $small-breakpoint) {
+  @each $size-name, $size-value in $font-sizes-at-small-breakpoint {
+    .fs-#{$size-name} {
+      font-size: toRem($size-value);
+    }
+    .lh-#{$size-name} {
+      line-height: toRem($size-value);
+    }
+  }
+}
+@media (max-width: $tiny-breakpoint) {
+  @each $size-name, $size-value in $font-sizes-at-tiny-breakpoint {
+    .fs-#{$size-name} {
+      font-size: toRem($size-value);
+    }
+    .lh-#{$size-name} {
+      line-height: toRem($size-value);
+    }
+  }
+}

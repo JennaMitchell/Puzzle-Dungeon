@@ -1,0 +1,31 @@
+@use "../abstracts/" as *;
+@each $color, $shade-map in $white {
+  @each $shade, $value in $shade-map {
+    .line-box-shadow-#{$color}-#{$shade} {
+      box-shadow: 0 10px 7px rgb($value, 1), 0 10px 10px rgb($value, 1),
+        0 10px 21px rgb($value, 1);
+    }
+    .dot-trail-line-background-color-#{$color}-#{$shade} {
+      background: linear-gradient(0deg, $value 89%, black);
+    }
+    .ts-#{$color}-#{$shade} {
+      text-shadow: 0 0 7px rgb(#fff, 0.35), 0 0 17px $value, 0 0 22px $value,
+        0 0 27px $value;
+    }
+    .path-line-background-color-#{$color}-#{$shade} {
+      background-color: $value;
+    }
+    .path-box-shadow-down-up-#{$color}-#{$shade} {
+      box-shadow: 0 0px 14px rgb($value, 1), 0 0px 20px rgb($value, 1),
+        0px 0px 42px rgb($value, 1);
+    }
+    .path-box-shadow-left-right-#{$color}-#{$shade} {
+      box-shadow: 0px 0px 14px rgb($value, 1), 0px 0px 20px rgb($value, 1),
+        0px 0px 42px rgb($value, 1);
+    }
+    .card-shadow-#{$color}-#{$shade} {
+      box-shadow: 0 0 7px rgb(#fff, 0.35), 0 0 17px $value, 0 0 22px $value,
+        0 0 27px $value;
+    }
+  }
+}
