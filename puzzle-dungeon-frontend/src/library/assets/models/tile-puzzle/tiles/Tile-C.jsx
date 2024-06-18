@@ -9,6 +9,7 @@ import { degreesToRadians } from "../../../../hooks/custom-project-hooks/degrees
 
 import { Outlines } from "@react-three/drei";
 import { startingTileData } from "../data/title-puzzle-data";
+import { useSpring, animated } from "@react-spring/three";
 
 export function TileC({
   positionX,
@@ -17,14 +18,38 @@ export function TileC({
   modelRef,
   textRef,
   elementClicked,
+  moveTriggered,
+  previousPositionX,
+  previousPositionZ,
 }) {
   const { nodes, materials } = useGLTF("/models/tile-C.glb");
+  const { x, z } = useSpring({
+    from: {
+      x: previousPositionX,
+      z: previousPositionZ,
+    },
+
+    to: [
+      {
+        x: moveTriggered ? positionX : previousPositionX,
+        z: moveTriggered ? positionZ : previousPositionZ,
+      },
+    ],
+
+    config: {
+      mass: 1,
+      friction: 30,
+    },
+    onResolve: () => {},
+
+    immediate: false,
+  });
 
   return (
-    <group
+    <animated.group
       dispose={null}
-      position-x={positionX}
-      position-z={positionZ}
+      position-x={x}
+      position-z={z}
       rotation-y={degreesToRadians(startingTileData.tileC.yRotationInDegrees)}
       onClick={modelClickHandler}
       scale={[1.35, 1, 1.35]}
@@ -41,7 +66,7 @@ export function TileC({
         material={materials["Text.001"]}
         ref={textRef}
       />
-    </group>
+    </animated.group>
   );
 }
 

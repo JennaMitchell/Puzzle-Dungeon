@@ -1,0 +1,32 @@
+@use "../abstracts/" as *;
+
+.cameraMenu {
+  width: max(150px, 150px);
+  max-height: max-content;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 20px 30px 20px;
+  background-color: $color-primary-800;
+  position: absolute;
+  z-index: $camera-menu-z-Index;
+  top: 20px;
+  right: 20px;
+
+  & button {
+    width: max(100%, 100%);
+    height: max-content;
+    padding: 10px 20px;
+    background-color: $color-primary-200;
+    color: $color-primary-1000;
+    transition: all 0.5s;
+    border: none;
+  }
+  & button:hover {
+    background-color: $color-primary-1000;
+    color: $color-primary-300;
+  }
+}

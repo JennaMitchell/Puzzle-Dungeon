@@ -18,6 +18,11 @@ import tilePuzzleMoveHandler from "../../../../library/hooks/custom-project-hook
 import { TileA } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-A";
 import { TileB } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-B";
 import { TileC } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-C";
+import { TileD } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-D";
+import { TileE } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-E";
+import { TileF } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-F";
+import { TileG } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-G";
+import { TileH } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-H";
 import { tilePositionFinder } from "../../../../library/hooks/custom-project-hooks/tile-puzzle/tilePositionFinder";
 import { tileLetterExtrator } from "../../../../library/hooks/custom-project-hooks/tile-puzzle/tileLetterExtractor";
 import { useState } from "react";
@@ -65,6 +70,12 @@ const TileController = ({
     positionX: 0,
     positionZ: 0,
   });
+  const [moveTriggered, setMoveTriggered] = useState(false);
+  const [previousTilePosition, setPreviousTilePosition] = useState({
+    positionX: 0,
+    positionZ: 0,
+  });
+  const [firstRender, setFirstRender] = useState(false);
 
   const modelClickHandler = () => {
     if (
@@ -126,9 +137,15 @@ const TileController = ({
             .positionZ,
       };
 
-      setTilePoisition(newPositionData);
+      if (!firstRender) {
+        setPreviousTilePosition(newPositionData);
+        setFirstRender(true);
+      } else {
+        setPreviousTilePosition(tilePoisition);
+        setTilePoisition(newPositionData);
+      }
     }
-  }, [tilePositionMatrix, tileLetter]);
+  }, [tilePositionMatrix, tileLetter, tilePoisition, firstRender]);
 
   // Use Effect below is used to clear the selected tile if another tile is clicked
 
@@ -171,9 +188,6 @@ const TileController = ({
       ];
 
       if (acceptableKeyPresses.includes(keyPressed) && selectedTile) {
-        console.log("Tile Position Matrix");
-
-        console.log(tilePositionMatrix);
         const moveResponse = tilePuzzleMoveHandler(
           keyPressed,
           tilePositionMatrix,
@@ -198,9 +212,6 @@ const TileController = ({
             typeof moveResponse.newTilePoisition.zeroBasedRow === "number"
           ) {
             // Removing  the current Tile the old Tile Position
-            console.log("Current Position");
-            console.log(currentTilePosition.column);
-            console.log(currentTilePosition.row);
 
             copyOfTilePositionMatrix[currentTilePosition.row][
               currentTilePosition.column
@@ -208,14 +219,13 @@ const TileController = ({
 
             // Adding in the new
 
-            console.log("new Position");
-            console.log(moveResponse.newTilePoisition.zeroBasedColumn);
-            console.log(moveResponse.newTilePoisition.zeroBasedRow);
             copyOfTilePositionMatrix[
               moveResponse.newTilePoisition.zeroBasedRow
             ][moveResponse.newTilePoisition.zeroBasedColumn] = tileLetter;
 
-            console.log(copyOfTilePositionMatrix);
+            // Move Sucess so triggering the new move
+
+            setMoveTriggered(true);
 
             dispatch(
               tilePuzzleStoreActions.setTilePositionMatrix(
@@ -244,10 +254,6 @@ const TileController = ({
     }
   }, [selectedTile, dispatch, tilePositionMatrix]);
 
-  console.log(" Rerender Tile Position Matrix");
-
-  console.log(tilePositionMatrix);
-
   return (
     <>
       {tileLetter === "A" && (
@@ -258,6 +264,9 @@ const TileController = ({
           modelRef={modelRef}
           textRef={textRef}
           elementClicked={elementClicked}
+          moveTriggered={moveTriggered}
+          previousPositionX={previousTilePosition.positionX}
+          previousPositionZ={previousTilePosition.positionZ}
         />
       )}
       {tileLetter === "B" && (
@@ -268,6 +277,9 @@ const TileController = ({
           modelRef={modelRef}
           textRef={textRef}
           elementClicked={elementClicked}
+          moveTriggered={moveTriggered}
+          previousPositionX={previousTilePosition.positionX}
+          previousPositionZ={previousTilePosition.positionZ}
         />
       )}
       {tileLetter === "C" && (
@@ -278,6 +290,74 @@ const TileController = ({
           modelRef={modelRef}
           textRef={textRef}
           elementClicked={elementClicked}
+          moveTriggered={moveTriggered}
+          previousPositionX={previousTilePosition.positionX}
+          previousPositionZ={previousTilePosition.positionZ}
+        />
+      )}
+      {tileLetter === "D" && (
+        <TileD
+          positionX={tilePoisition.positionX}
+          positionZ={tilePoisition.positionZ}
+          modelClickHandler={modelClickHandler}
+          modelRef={modelRef}
+          textRef={textRef}
+          elementClicked={elementClicked}
+          moveTriggered={moveTriggered}
+          previousPositionX={previousTilePosition.positionX}
+          previousPositionZ={previousTilePosition.positionZ}
+        />
+      )}
+      {tileLetter === "E" && (
+        <TileE
+          positionX={tilePoisition.positionX}
+          positionZ={tilePoisition.positionZ}
+          modelClickHandler={modelClickHandler}
+          modelRef={modelRef}
+          textRef={textRef}
+          elementClicked={elementClicked}
+          moveTriggered={moveTriggered}
+          previousPositionX={previousTilePosition.positionX}
+          previousPositionZ={previousTilePosition.positionZ}
+        />
+      )}
+      {tileLetter === "F" && (
+        <TileF
+          positionX={tilePoisition.positionX}
+          positionZ={tilePoisition.positionZ}
+          modelClickHandler={modelClickHandler}
+          modelRef={modelRef}
+          textRef={textRef}
+          elementClicked={elementClicked}
+          moveTriggered={moveTriggered}
+          previousPositionX={previousTilePosition.positionX}
+          previousPositionZ={previousTilePosition.positionZ}
+        />
+      )}
+      {tileLetter === "G" && (
+        <TileG
+          positionX={tilePoisition.positionX}
+          positionZ={tilePoisition.positionZ}
+          modelClickHandler={modelClickHandler}
+          modelRef={modelRef}
+          textRef={textRef}
+          elementClicked={elementClicked}
+          moveTriggered={moveTriggered}
+          previousPositionX={previousTilePosition.positionX}
+          previousPositionZ={previousTilePosition.positionZ}
+        />
+      )}
+      {tileLetter === "H" && (
+        <TileH
+          positionX={tilePoisition.positionX}
+          positionZ={tilePoisition.positionZ}
+          modelClickHandler={modelClickHandler}
+          modelRef={modelRef}
+          textRef={textRef}
+          elementClicked={elementClicked}
+          moveTriggered={moveTriggered}
+          previousPositionX={previousTilePosition.positionX}
+          previousPositionZ={previousTilePosition.positionZ}
         />
       )}
     </>

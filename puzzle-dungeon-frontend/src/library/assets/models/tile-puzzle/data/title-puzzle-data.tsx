@@ -67,7 +67,7 @@ export const startingTileData: {
 
 export const startingTilePositionMatrix = [
   ["A", "B", "C"],
-  ["", "", ""],
-  ["", "", ""],
+  ["D", "E", "F"],
+  ["G", "H", ""],
 ];
 export const acceptableTileLetters = ["A", "B", "C", "D", "E", "F", "G", "H"];

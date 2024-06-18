@@ -4,12 +4,14 @@ type TilePuzzleStoreType = {
   selectedTile: string | null;
   previousSelectedTile: string | null;
   tilePositionMatrix: string[][];
+  cameraView: string;
 };
 
 const initialState: TilePuzzleStoreType = {
   selectedTile: null,
   previousSelectedTile: null,
   tilePositionMatrix: startingTilePositionMatrix,
+  cameraView: "front",
 };
 
 export const tilePuzzleStoreSlice = createSlice({
@@ -24,6 +26,9 @@ export const tilePuzzleStoreSlice = createSlice({
     },
     setTilePositionMatrix(state, { payload }) {
       state.tilePositionMatrix = payload;
+    },
+    setCameraView(state, { payload }) {
+      state.cameraView = payload;
     },
   },
 });
