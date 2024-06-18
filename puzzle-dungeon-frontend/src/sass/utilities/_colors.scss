@@ -1,25 +1,29 @@
 @use "../abstracts" as *;
 
 // fucntion controlling dark mode is in base > general file
-@each $color, $shade-map in $white {
-  @each $shade, $value in $shade-map {
-    .clr-#{$color}-#{$shade} {
-      color: $value;
-    }
-    .bg-#{$color}-#{$shade} {
-      background-color: $value;
-    }
+@each $shade, $shade-value in $white {
+  .clr-white-#{$shade} {
+    color: $shade-value;
+  }
+  .bg-white-#{$shade} {
+    background-color: $shade-value;
   }
 }
 
-@each $color, $shade-map in $neon {
-  @each $shade, $value in $shade-map {
-    .clr-#{$color}-#{$shade} {
-      color: $value;
-    }
-    .bg-#{$color}-#{$shade} {
-      background-color: $value;
-    }
+@each $shade, $shade-value in $lime {
+  .clr-lime-#{$shade} {
+    color: $shade-value;
+  }
+  .bg-lime-#{$shade} {
+    background-color: $shade-value;
+  }
+}
+@each $shade, $shade-value in $red {
+  .clr-red-#{$shade} {
+    color: $shade-value;
+  }
+  .bg-red-#{$shade} {
+    background-color: $shade-value;
   }
 }
 

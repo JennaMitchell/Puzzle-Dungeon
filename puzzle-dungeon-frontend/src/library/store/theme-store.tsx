@@ -11,7 +11,7 @@ const initialState: ThemeStoreStatesType = {
 };
 
 export const themeStoreSlice = createSlice({
-  name: "Portfolio Theme Store",
+  name: "Puzzle Dungeon Theme Store",
   initialState: initialState,
   reducers: {
     setThemeMenuActive(state, { payload }) {

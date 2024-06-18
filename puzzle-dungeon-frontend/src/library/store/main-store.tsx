@@ -1,12 +1,16 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { navStoreSlice } from "./nav-store";
-import { animationStoreSlice } from "./animation-triggers";
 import { themeStoreSlice } from "./theme-store";
+import { tilePuzzleStoreSlice } from "./tile-puzzle-store";
+import { puzzlePageStoreSlice } from "./puzzle-page-store";
+import { popupStoreSlice } from "./popup-store";
 const store = configureStore({
   reducer: {
     nav: navStoreSlice.reducer,
-    animations: animationStoreSlice.reducer,
     theme: themeStoreSlice.reducer,
+    tilePuzzle: tilePuzzleStoreSlice.reducer,
+    puzzlePage: puzzlePageStoreSlice.reducer,
+    popups: popupStoreSlice.reducer,
   },
 });
 

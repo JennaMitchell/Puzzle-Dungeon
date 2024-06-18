@@ -1,0 +1,31 @@
+@use "../abstracts/" as *;
+@use "sass:map";
+
+.messagePopup {
+  position: absolute;
+  top: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  column-gap: 10px;
+  justify-content: center;
+  width: max-content;
+  height: max-content;
+  padding: 5px 10px;
+  border: 2px solid transparent;
+  color: black;
+  justify-content: center;
+  align-items: center;
+  transition: all 1s;
+  z-index: $popups-z-Index;
+}
+
+.messagePopupSuccess {
+  border-color: map.get($lime, "800");
+  background-color: map.get($lime, "200");
+}
+
+.messagePopupError {
+  border-color: map.get($red, "800");
+  background-color: map.get($red, "200");
+}

@@ -13,7 +13,7 @@ const initialState: NavStoreStatesType = {
 };
 
 export const navStoreSlice = createSlice({
-  name: "Portfolio Nav Store",
+  name: "Puzzle Dungeon Nav Store",
   initialState: initialState,
   reducers: {
     setNavMenuAnimationDirection(state, { payload }) {
