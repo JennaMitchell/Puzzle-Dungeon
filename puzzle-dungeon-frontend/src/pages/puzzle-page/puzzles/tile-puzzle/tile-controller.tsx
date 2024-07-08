@@ -15,14 +15,14 @@ import { useEffect, useMemo } from "react";
 
 import tilePuzzleMoveHandler from "../../../../library/hooks/custom-project-hooks/tile-puzzle/tilePuzzleMoveHandler";
 
-import { TileA } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-A";
-import { TileB } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-B";
-import { TileC } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-C";
-import { TileD } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-D";
-import { TileE } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-E";
-import { TileF } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-F";
-import { TileG } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-G";
-import { TileH } from "../../../../library/assets/models/tile-puzzle/tiles/Tile-H";
+import { RuneTileOne } from "../../../../library/assets/models/tile-puzzle/tiles/Rune-Tile-1";
+import { RuneTileTwo } from "../../../../library/assets/models/tile-puzzle/tiles/Rune-Tile-2";
+import { RuneTileThree } from "../../../../library/assets/models/tile-puzzle/tiles/Rune-Tile-3";
+import { RuneTileFour } from "../../../../library/assets/models/tile-puzzle/tiles/Rune-Tile-4";
+import { RuneTileFive } from "../../../../library/assets/models/tile-puzzle/tiles/Rune-Tile-5";
+import { RuneTileSix } from "../../../../library/assets/models/tile-puzzle/tiles/Rune-Tile-6";
+import { RuneTileSeven } from "../../../../library/assets/models/tile-puzzle/tiles/Rune-Tile-7";
+import { RuneTileEight } from "../../../../library/assets/models/tile-puzzle/tiles/Rune-Tile-8";
 import { tilePositionFinder } from "../../../../library/hooks/custom-project-hooks/tile-puzzle/tilePositionFinder";
 import { tileLetterExtrator } from "../../../../library/hooks/custom-project-hooks/tile-puzzle/tileLetterExtractor";
 import { useState } from "react";
@@ -257,7 +257,7 @@ const TileController = ({
   return (
     <>
       {tileLetter === "A" && (
-        <TileA
+        <RuneTileOne
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
           modelClickHandler={modelClickHandler}
@@ -270,7 +270,7 @@ const TileController = ({
         />
       )}
       {tileLetter === "B" && (
-        <TileB
+        <RuneTileTwo
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
           modelClickHandler={modelClickHandler}
@@ -283,7 +283,7 @@ const TileController = ({
         />
       )}
       {tileLetter === "C" && (
-        <TileC
+        <RuneTileThree
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
           modelClickHandler={modelClickHandler}
@@ -296,7 +296,7 @@ const TileController = ({
         />
       )}
       {tileLetter === "D" && (
-        <TileD
+        <RuneTileFour
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
           modelClickHandler={modelClickHandler}
@@ -309,7 +309,7 @@ const TileController = ({
         />
       )}
       {tileLetter === "E" && (
-        <TileE
+        <RuneTileFive
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
           modelClickHandler={modelClickHandler}
@@ -322,7 +322,7 @@ const TileController = ({
         />
       )}
       {tileLetter === "F" && (
-        <TileF
+        <RuneTileSix
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
           modelClickHandler={modelClickHandler}
@@ -335,7 +335,7 @@ const TileController = ({
         />
       )}
       {tileLetter === "G" && (
-        <TileG
+        <RuneTileSeven
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
           modelClickHandler={modelClickHandler}
@@ -348,7 +348,7 @@ const TileController = ({
         />
       )}
       {tileLetter === "H" && (
-        <TileH
+        <RuneTileEight
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
           modelClickHandler={modelClickHandler}

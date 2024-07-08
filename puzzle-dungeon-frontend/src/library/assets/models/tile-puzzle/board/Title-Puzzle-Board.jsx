@@ -9,10 +9,16 @@ export function TitlePuzzleBoard(props) {
   const { nodes, materials } = useGLTF("/models/board.glb");
   return (
     <group {...props} dispose={null}>
-      <mesh
-        geometry={nodes["title-puzzle-board_v2"].geometry}
-        material={materials["Material.001"]}
-      />
+      <group position={[-89.044, 294.422, -17.788]}>
+        <mesh
+          geometry={nodes["tile-puzzle-podium_v3_1"].geometry}
+          material={materials.Base}
+        />
+        <mesh
+          geometry={nodes["tile-puzzle-podium_v3_2"].geometry}
+          material={materials["Rune-Color"]}
+        />
+      </group>
     </group>
   );
 }
