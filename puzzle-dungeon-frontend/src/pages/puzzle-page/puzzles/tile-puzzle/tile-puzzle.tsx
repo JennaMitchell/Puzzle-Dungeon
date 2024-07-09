@@ -11,7 +11,7 @@ const TilePuzzle = () => {
     <>
       <Leva hidden />
       <CameraMenu />
-      <Canvas camera={{ position: [0, 120, 0] }}>
+      <Canvas camera={{ position: [0, 475, 0] }}>
         <ambientLight intensity={0.1} />
         <CanvasCameraControls />
 

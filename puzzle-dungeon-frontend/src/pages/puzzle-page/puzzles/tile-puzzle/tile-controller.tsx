@@ -31,6 +31,7 @@ import { tilePositionData } from "../../../../library/assets/models/tile-puzzle/
 export type TilePropsType = {
   positionX: number;
   positionZ: number;
+  positionY: number;
 
   modelClickHandler: () => void;
   modelRef: any;
@@ -69,11 +70,13 @@ const TileController = ({
   const [tilePoisition, setTilePoisition] = useState({
     positionX: 0,
     positionZ: 0,
+    positionY: 0,
   });
   const [moveTriggered, setMoveTriggered] = useState(false);
   const [previousTilePosition, setPreviousTilePosition] = useState({
     positionX: 0,
     positionZ: 0,
+    positionY: 0,
   });
   const [firstRender, setFirstRender] = useState(false);
 
@@ -135,6 +138,9 @@ const TileController = ({
         positionZ:
           tilePositionData[tileMatrixPosition.row][tileMatrixPosition.column]
             .positionZ,
+        positionY:
+          tilePositionData[tileMatrixPosition.row][tileMatrixPosition.column]
+            .positionY,
       };
 
       if (!firstRender) {
@@ -260,6 +266,7 @@ const TileController = ({
         <RuneTileOne
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
+          positionY={tilePoisition.positionY}
           modelClickHandler={modelClickHandler}
           modelRef={modelRef}
           textRef={textRef}
@@ -267,12 +274,14 @@ const TileController = ({
           moveTriggered={moveTriggered}
           previousPositionX={previousTilePosition.positionX}
           previousPositionZ={previousTilePosition.positionZ}
+          previousPositionY={previousTilePosition.positionY}
         />
       )}
       {tileLetter === "B" && (
         <RuneTileTwo
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
+          positionY={tilePoisition.positionY}
           modelClickHandler={modelClickHandler}
           modelRef={modelRef}
           textRef={textRef}
@@ -280,12 +289,14 @@ const TileController = ({
           moveTriggered={moveTriggered}
           previousPositionX={previousTilePosition.positionX}
           previousPositionZ={previousTilePosition.positionZ}
+          previousPositionY={previousTilePosition.positionY}
         />
       )}
       {tileLetter === "C" && (
         <RuneTileThree
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
+          positionY={tilePoisition.positionY}
           modelClickHandler={modelClickHandler}
           modelRef={modelRef}
           textRef={textRef}
@@ -293,12 +304,14 @@ const TileController = ({
           moveTriggered={moveTriggered}
           previousPositionX={previousTilePosition.positionX}
           previousPositionZ={previousTilePosition.positionZ}
+          previousPositionY={previousTilePosition.positionY}
         />
       )}
       {tileLetter === "D" && (
         <RuneTileFour
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
+          positionY={tilePoisition.positionY}
           modelClickHandler={modelClickHandler}
           modelRef={modelRef}
           textRef={textRef}
@@ -306,12 +319,14 @@ const TileController = ({
           moveTriggered={moveTriggered}
           previousPositionX={previousTilePosition.positionX}
           previousPositionZ={previousTilePosition.positionZ}
+          previousPositionY={previousTilePosition.positionY}
         />
       )}
       {tileLetter === "E" && (
         <RuneTileFive
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
+          positionY={tilePoisition.positionY}
           modelClickHandler={modelClickHandler}
           modelRef={modelRef}
           textRef={textRef}
@@ -319,12 +334,14 @@ const TileController = ({
           moveTriggered={moveTriggered}
           previousPositionX={previousTilePosition.positionX}
           previousPositionZ={previousTilePosition.positionZ}
+          previousPositionY={previousTilePosition.positionY}
         />
       )}
       {tileLetter === "F" && (
         <RuneTileSix
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
+          positionY={tilePoisition.positionY}
           modelClickHandler={modelClickHandler}
           modelRef={modelRef}
           textRef={textRef}
@@ -332,12 +349,14 @@ const TileController = ({
           moveTriggered={moveTriggered}
           previousPositionX={previousTilePosition.positionX}
           previousPositionZ={previousTilePosition.positionZ}
+          previousPositionY={previousTilePosition.positionY}
         />
       )}
       {tileLetter === "G" && (
         <RuneTileSeven
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
+          positionY={tilePoisition.positionY}
           modelClickHandler={modelClickHandler}
           modelRef={modelRef}
           textRef={textRef}
@@ -345,12 +364,14 @@ const TileController = ({
           moveTriggered={moveTriggered}
           previousPositionX={previousTilePosition.positionX}
           previousPositionZ={previousTilePosition.positionZ}
+          previousPositionY={previousTilePosition.positionY}
         />
       )}
       {tileLetter === "H" && (
         <RuneTileEight
           positionX={tilePoisition.positionX}
           positionZ={tilePoisition.positionZ}
+          positionY={tilePoisition.positionY}
           modelClickHandler={modelClickHandler}
           modelRef={modelRef}
           textRef={textRef}
@@ -358,6 +379,7 @@ const TileController = ({
           moveTriggered={moveTriggered}
           previousPositionX={previousTilePosition.positionX}
           previousPositionZ={previousTilePosition.positionZ}
+          previousPositionY={previousTilePosition.positionY}
         />
       )}
     </>

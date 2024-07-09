@@ -13,6 +13,7 @@ import { useSpring, animated } from "@react-spring/three";
 export function RuneTileFour({
   positionX,
   positionZ,
+  positionY,
   modelClickHandler,
   modelRef,
   textRef,
@@ -20,18 +21,21 @@ export function RuneTileFour({
   moveTriggered,
   previousPositionX,
   previousPositionZ,
+  previousPositionY,
 }) {
   const { nodes, materials } = useGLTF("/models/tile-rune-4.glb");
-  const { x, z } = useSpring({
+  const { x, z, y } = useSpring({
     from: {
       x: previousPositionX,
       z: previousPositionZ,
+      y: previousPositionY,
     },
 
     to: [
       {
         x: moveTriggered ? positionX : previousPositionX,
         z: moveTriggered ? positionZ : previousPositionZ,
+        y: moveTriggered ? positionY : previousPositionY,
       },
     ],
 
@@ -48,7 +52,9 @@ export function RuneTileFour({
       dispose={null}
       position-x={x}
       position-z={z}
+      position-y={y}
       rotation-y={degreesToRadians(startingTileData.tileD.yRotationInDegrees)}
+      rotation-x={degreesToRadians(startingTileData.tileD.xRotationInDegrees)}
       onClick={modelClickHandler}
       scale={[1.35, 1, 1.35]}
     >
