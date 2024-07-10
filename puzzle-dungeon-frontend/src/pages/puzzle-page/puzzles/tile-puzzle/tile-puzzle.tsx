@@ -6,6 +6,9 @@ import TileController from "./tile-controller";
 import { Leva } from "leva";
 import { CanvasCameraControls } from "./canvas-camera-controls";
 import { CameraMenu } from "./camera-menu";
+import { TilePuzzleSwitchStand } from "../../../../library/assets/models/tile-puzzle/switch/tile-puzzle-switch-stand";
+
+import { TilePuzzleSwitch } from "../../../../library/assets/models/tile-puzzle/switch/tile-puzzle-switch";
 const TilePuzzle = () => {
   return (
     <>
@@ -31,6 +34,8 @@ const TilePuzzle = () => {
         <TileController tileLetter="F" />
         <TileController tileLetter="G" />
         <TileController tileLetter="H" />
+        <TilePuzzleSwitchStand />
+        <TilePuzzleSwitch />
       </Canvas>
     </>
   );
